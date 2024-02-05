@@ -80,13 +80,17 @@ def check_username(a):
             t = {}
 
             res = ""
-            x = r.get(links[s_n[i]])
+            try:
+                x = r.get(links[s_n[i]], timeout=5)
+            except r.exceptions.Timeout:
+                typer.secho(f"Server timed out => {s_n[i]}", fg=typer.colors.RED)
+                continue
             if x.status_code == 200:
-                res+=f"{s_n[i]} -- ✅"
+                res+=f"{s_n[i]} -- busy"
             else:
-                res+=f"{s_n[i]} -- ❌"
+                res+=f"{s_n[i]} -- empty"
             typer.secho(res,fg=typer.colors.CYAN)
-        except:
-            pass
+        except Exception as e:
+            print(repr(e))
 
 
