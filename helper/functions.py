@@ -1,14 +1,14 @@
+import threading
+import requests
 import requests as r
 import typer
-
-
-def check_username(a):
+import time
+def nick_fast_checker(a):
     s_n = ['instagram','facebook','twitter','youtube','blogger','reddit','pinterest','github','tumblr','flickr','vimeo','soundcloud',
 'disqus','medium','devianart','vk','about.me','imgur','slideshare','spotify','scribd','badoo','patreon','bitbucket','dailymotion','etsy','cashme',
 'behance','goodreads','instructables','keybase','kongregate','livejournal','angellist','last.fm','dribbble','codeacademy','gravatar','foursquare','gumroad',
 'newgrounds','wattpad','canva','creativemarket','trakt','tripadvisor','hubpages','contently','houzz','blip.fm','wikipedia' ,'codementor',
 'reverbnation','designspiration65','bandcamp','colourlovers','ifttt','slack','okcupid','trip','ello','hackerone','freelancer']
-
     links = {
     'instagram' :f'https://www.instagram.com/{a}',
     'facebook'  :f'https://www.facebook.com/{a}',
@@ -75,22 +75,284 @@ def check_username(a):
     'freelancer':f'https://www.freelancer.com/u/{a}'
 }   
     
-    for i in range(len(s_n)):
-        try:
-            t = {}
+    def check_username_1():
 
-            res = ""
+        for i in range(0,5):
             try:
-                x = r.get(links[s_n[i]], timeout=5)
-            except r.exceptions.Timeout:
-                typer.secho(f"Server timed out => {s_n[i]}", fg=typer.colors.RED)
-                continue
-            if x.status_code == 200:
-                res+=f"{s_n[i]} -- busy"
-            else:
-                res+=f"{s_n[i]} -- empty"
-            typer.secho(res,fg=typer.colors.CYAN)
-        except Exception as e:
-            print(repr(e))
+                t = {}
 
+                res = ""
+                try:
+                    x = r.get(links[s_n[i]], timeout=5)
+                except r.exceptions.Timeout:
+                    typer.secho(f"Server timed out => {s_n[i]}", fg=typer.colors.RED)
+                    continue
+                if x.status_code == 200:
+                    res+=f"{s_n[i]} -- busy"
+                else:
+                    res+=f"{s_n[i]} -- empty"
+                typer.secho(res,fg=typer.colors.CYAN)
+            except Exception as e:
+                pass
+
+    def check_username_2():
+        
+        for i in range(5,10):
+            try:
+                t = {}
+
+                res = ""
+                try:
+                    x = r.get(links[s_n[i]], timeout=5)
+                except r.exceptions.Timeout:
+                    typer.secho(f"Server timed out => {s_n[i]}", fg=typer.colors.RED)
+                    continue
+                if x.status_code == 200:
+                    res+=f"{s_n[i]} -- busy 2"
+                else:
+                    res+=f"{s_n[i]} -- empty 2"
+                typer.secho(res,fg=typer.colors.CYAN)
+            except Exception as e:
+                pass
+
+
+    def check_username_3():
+    
+    
+        for i in range(10,15):
+            try:
+                t = {}
+
+                res = ""
+                try:
+                    x = r.get(links[s_n[i]], timeout=5)
+                except r.exceptions.Timeout:
+                    typer.secho(f"Server timed out => {s_n[i]}", fg=typer.colors.RED)
+                    continue
+                if x.status_code == 200:
+                    res+=f"{s_n[i]} -- busy 3"
+                else:
+                    res+=f"{s_n[i]} -- empty 3"
+                typer.secho(res,fg=typer.colors.CYAN)
+            except Exception as e:
+                pass
+    def check_username_4():
+        
+        
+            for i in range(15,20):
+                try:
+                    t = {}
+
+                    res = ""
+                    try:
+                        x = r.get(links[s_n[i]], timeout=5)
+                    except r.exceptions.Timeout:
+                        typer.secho(f"Server timed out => {s_n[i]}", fg=typer.colors.RED)
+                        continue
+                    if x.status_code == 200:
+                        res+=f"{s_n[i]} -- busy 3"
+                    else:
+                        res+=f"{s_n[i]} -- empty 3"
+                    typer.secho(res,fg=typer.colors.CYAN)
+                except Exception as e:
+                    pass
+    def check_username_5():
+    
+    
+        for i in range(20,25):
+            try:
+                t = {}
+
+                res = ""
+                try:
+                    x = r.get(links[s_n[i]], timeout=5)
+                except r.exceptions.Timeout:
+                    typer.secho(f"Server timed out => {s_n[i]}", fg=typer.colors.RED)
+                    continue
+                if x.status_code == 200:
+                    res+=f"{s_n[i]} -- busy 3"
+                else:
+                    res+=f"{s_n[i]} -- empty 3"
+                typer.secho(res,fg=typer.colors.CYAN)
+            except Exception as e:
+                pass
+    def check_username_6():
+    
+    
+        for i in range(25,30):
+            try:
+                t = {}
+
+                res = ""
+                try:
+                    x = r.get(links[s_n[i]], timeout=5)
+                except r.exceptions.Timeout:
+                    typer.secho(f"Server timed out => {s_n[i]}", fg=typer.colors.RED)
+                    continue
+                if x.status_code == 200:
+                    res+=f"{s_n[i]} -- busy 3"
+                else:
+                    res+=f"{s_n[i]} -- empty 3"
+                typer.secho(res,fg=typer.colors.CYAN)
+            except Exception as e:
+                pass
+    def check_username_7():
+    
+    
+        for i in range(30,35):
+            try:
+                t = {}
+
+                res = ""
+                try:
+                    x = r.get(links[s_n[i]], timeout=5)
+                except r.exceptions.Timeout:
+                    typer.secho(f"Server timed out => {s_n[i]}", fg=typer.colors.RED)
+                    continue
+                if x.status_code == 200:
+                    res+=f"{s_n[i]} -- busy 3"
+                else:
+                    res+=f"{s_n[i]} -- empty 3"
+                typer.secho(res,fg=typer.colors.CYAN)
+            except Exception as e:
+                pass
+
+    def check_username_8():
+    
+    
+        for i in range(35,40):
+            try:
+                t = {}
+
+                res = ""
+                try:
+                    x = r.get(links[s_n[i]], timeout=5)
+                except r.exceptions.Timeout:
+                    typer.secho(f"Server timed out => {s_n[i]}", fg=typer.colors.RED)
+                    continue
+                if x.status_code == 200:
+                    res+=f"{s_n[i]} -- busy 3"
+                else:
+                    res+=f"{s_n[i]} -- empty 3"
+                typer.secho(res,fg=typer.colors.CYAN)
+            except Exception as e:
+                pass
+    def check_username_9():
+    
+    
+        for i in range(40,45):
+            try:
+                t = {}
+
+                res = ""
+                try:
+                    x = r.get(links[s_n[i]], timeout=5)
+                except r.exceptions.Timeout:
+                    typer.secho(f"Server timed out => {s_n[i]}", fg=typer.colors.RED)
+                    continue
+                if x.status_code == 200:
+                    res+=f"{s_n[i]} -- busy 3"
+                else:
+                    res+=f"{s_n[i]} -- empty 3"
+                typer.secho(res,fg=typer.colors.CYAN)
+            except Exception as e:
+                pass
+    def check_username_10():
+        for i in range(45,50):
+            try:
+                t = {}
+
+                res = ""
+                try:
+                    x = r.get(links[s_n[i]], timeout=5)
+                except r.exceptions.Timeout:
+                    typer.secho(f"Server timed out => {s_n[i]}", fg=typer.colors.RED)
+                    continue
+                if x.status_code == 200:
+                    res+=f"{s_n[i]} -- busy 3"
+                else:
+                    res+=f"{s_n[i]} -- empty 3"
+                typer.secho(res,fg=typer.colors.CYAN)
+            except Exception as e:
+                pass
+    def check_username_11():
+    
+    
+        for i in range(50,55):
+            try:
+                t = {}
+
+                res = ""
+                try:
+                    x = r.get(links[s_n[i]], timeout=5)
+                except r.exceptions.Timeout:
+                    typer.secho(f"Server timed out => {s_n[i]}", fg=typer.colors.RED)
+                    continue
+                if x.status_code == 200:
+                    res+=f"{s_n[i]} -- busy 3"
+                else:
+                    res+=f"{s_n[i]} -- empty 3"
+                typer.secho(res,fg=typer.colors.CYAN)
+            except Exception as e:
+                pass
+    def check_username_12():
+    
+    
+        for i in range(60,63):
+            try:
+                t = {}
+
+                res = ""
+                try:
+                    x = r.get(links[s_n[i]], timeout=5)
+                except r.exceptions.Timeout:
+                    typer.secho(f"Server timed out => {s_n[i]}", fg=typer.colors.RED)
+                    continue
+                if x.status_code == 200:
+                    res+=f"{s_n[i]} -- busy 3"
+                else:
+                    res+=f"{s_n[i]} -- empty 3"
+                typer.secho(res,fg=typer.colors.CYAN)
+            except Exception as e:
+                pass
+# check_username_1('sr_red')
+# check_username_2('mexroj')
+
+    thread_1 = threading.Thread(target=check_username_1)
+    thread_2 = threading.Thread(target=check_username_2)
+    thread_3 = threading.Thread(target=check_username_3)
+    thread_4 = threading.Thread(target=check_username_4)
+    thread_5 = threading.Thread(target=check_username_5)
+    thread_6 = threading.Thread(target=check_username_6)
+    thread_7 = threading.Thread(target=check_username_7)
+    thread_8 = threading.Thread(target=check_username_8)
+    thread_9 = threading.Thread(target=check_username_9)
+    thread_10 = threading.Thread(target=check_username_10)
+    thread_11 = threading.Thread(target=check_username_11)
+    thread_12 = threading.Thread(target=check_username_12)
+
+    thread_1.start()
+    thread_2.start()
+    thread_3.start()
+    thread_4.start()
+    thread_5.start()
+    thread_7.start()
+    thread_8.start()
+    thread_9.start()
+    thread_10.start()
+    thread_11.start()
+    thread_12.start()
+
+
+    thread_1.join()
+    thread_2.join()
+    thread_3.join()
+    thread_4.join()
+    thread_5.join()
+    thread_7.join()
+    thread_8.join()
+    thread_9.join()
+    thread_10.join()
+    thread_11.join()
+    thread_12.join()
 
