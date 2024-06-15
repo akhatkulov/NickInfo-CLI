@@ -3,6 +3,7 @@ from colorama import Fore, init
 import os
 def home_page():
         os.system("clear")
+        stdout.write("⮜═══════════════════════════════════════════════════════════════════════════════════════════════════════════⮞ \n"+ Fore.CYAN)
         stdout.write("       ##     ######                 "+Fore.CYAN  +"                     Ｎｉｃｋ Ｉｎｆｏ －－ ＣＬＩ                          \n")
         stdout.write("       ####   ######   #####       ┃ "+Fore.CYAN  +"╔═════════════════════════════╦══════════════════════════════════════╗ ┃\n")
         stdout.write("       #############   #####       ┃ "+Fore.CYAN  +"║   App's Target              ║  check usernames on social networks  ║ ┃\n")
@@ -13,5 +14,6 @@ def home_page():
         stdout.write("       ####   ##############       ┃ "+Fore.CYAN  +"║═════════════════════════════╬══════════════════════════════════════║ ┃\n")
         stdout.write("       ####   ######   #####       ┃ "+Fore.CYAN  +"║   Github                    ║  github.com/akhatkulov               ║ ┃\n") 
         stdout.write("              ######     ###       ┃ "+Fore.CYAN  +"╚═════════════════════════════╩══════════════════════════════════════╝ ┃\n")
-        stdout.write("⮜════════════════════════════════════════════════════════════════════════════════════════════════════════════⮞ "+ Fore.CYAN)
+        stdout.write("                               Author's Web-Site: TheWind.uz         Study Platform: HackNow.uz             ┃\n"+Fore.CYAN)
+        stdout.write("⮜═══════════════════════════════════════════════════════════════════════════════════════════════════════════⮞ "+ Fore.CYAN)
         stdout.write("\n")
