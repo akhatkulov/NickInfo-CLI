@@ -15,6 +15,7 @@ Lang = [
         choices=[typer.style('Uzbek',fg=typer.colors.GREEN),typer.style("Russian",fg=typer.colors.GREEN),typer.style("English",typer.colors.GREEN)]
     ),
     ]
+
 x = inquirer.prompt(Lang)
 
 if 'Uzbek' in x['language']:
